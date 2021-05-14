@@ -1,0 +1,36 @@
+import math
+
+class Punto():
+    
+    def __init__(self, X = 0, Y = 0):
+        self.X = X
+        self.Y = Y
+    def __str__(self):
+        return f"({self.X}, {self.Y})"
+    def Cuadrante(self):
+        if self.X > 0 and self.Y > 0:
+            print(f"{self} pertenece al primer cuadrante")
+        elif self.X < 0 and self.Y > 0:
+            print(f"{self} pertenece al segundo cuadrante")
+        elif self.X < 0 and self.Y < 0:
+            print(f"{self} pertenece al tercero cuadrante")
+        elif self.X > 0 and self.Y < 0:
+            print(f"{self} pertenece al cuarto cuadrante")
+        # Si Y == 0 el punto se ubica sobre el eje X
+        elif self.X != 0 and self.Y == 0:
+            print(f"{self} se ubica sobre el eje X")
+         # Si X == 0 el punto se ubica sobre el eje Y
+        elif self.X == 0 and self.Y != 0:
+            print(f"{self} se ubica sobre el eje Y")
+         # Si Y == 0 and X == 0 el punto se ubica en el origen
+        else:
+            print(f"{self} se ubica en el origen")
+      
+    def Vector(self, p):
+        print(f"""El vector que une los puntos {self} y {p}
+        es igual a ({p.X - self.X}, {p.Y - self.Y})""")
+        
+    def Distancia(self, p):
+        mod = math.sqrt((p.X - self.X)**2 + (p.Y - self.Y)**2)
+        print(f"La distancia entre los puntos {self} y {p} es {mod}")
+            
